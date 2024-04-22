@@ -61,6 +61,12 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  @override
+  void initState() {
+    _filteredTasks = _tasks;
+    super.initState();
+  }
+
   FloatingActionButton buildDialog() {
     return FloatingActionButton(
       onPressed: () => showDialog<String>(
