@@ -28,7 +28,6 @@ class TaskBuild extends StatelessWidget {
           tooltip: "Delete task",
           onPressed: () {
             onDelete(task);
-            //print("task -> ${task.id} msg -> ${task.name}");
           },
         ),
       ),
