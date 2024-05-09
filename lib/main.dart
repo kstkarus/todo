@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 
@@ -90,7 +89,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   setState(() {
                     Task newTask = Task(
-                      id: DateTime.now().microsecondsSinceEpoch,
                       name: _newTaskName.text
                     );
 
@@ -175,10 +173,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     controller: _findValue,
                     onChanged: (String? val) {
                       setState(() {
-                        _filteredTasks = _tasks.where((element) => element.name!.contains(_findValue.text));
+                        _filteredTasks = _tasks.where((element) => element.name.contains(_findValue.text));
                       });
                     },
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: "Search here",
                       prefixIcon: Icon(Icons.search),
